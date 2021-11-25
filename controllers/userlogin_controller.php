@@ -9,7 +9,7 @@ class userlogin_controller extends sql_controller
         $this->connect_db();
     }
 
-    public function getuser($username, $password) : user {
+    public function getuser($username) : user {
         $found_user = new user();
         $result = $this->read("user",["id","name","password"],"name",$username);
         if(!is_null($result) && $result->num_rows>0) {

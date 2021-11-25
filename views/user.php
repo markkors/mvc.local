@@ -5,8 +5,9 @@ $user=new user();
 if(isset($_POST['submit'])) {
     $uc = new userlogin_controller();
     $user = htmlspecialchars($_POST['user']);
-    $password = null;
-    $user = $uc->getuser($user,$password);
+    $password = $_POST['password'];
+    $user = $uc->getuser($user);
+    $canlogin = ($user->checkpassword($password)) ? "yes" : "no";
 }
 
 ?>
@@ -25,7 +26,7 @@ if(isset($_POST['submit'])) {
         <div><?=$user->id?></div>
         <div><?=$user->name?></div>
         <div><?=$user->password?></div>
-
+        <div>Password correct: <?=$canlogin?></div>
     </div>
 </body>
 </html>

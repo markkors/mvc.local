@@ -14,7 +14,13 @@
 <p>Dit is de index pagina van de MVC demo</p>
 
 <form action="/mvc.local/getuser" method="post">
-    <input type="text" name="user" placeholder="username">
+    <div>
+        <input type="text" name="user" placeholder="username">
+    </div>
+    <div>
+        <input type="text" name="password" placeholder="password">
+    </div>
+
     <input type="submit" name="submit" value="get a user">
 </form>
 
